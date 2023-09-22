@@ -7,7 +7,7 @@ use dbinfox;
 
 -- o bloco abaixo cria uma tabela
 create table tbusuarios(
-iduser int primary key auto_increment,
+iduser int primary key,
 usuario varchar(50) not null,
 fone varchar(15),
 login varchar(15) not null unique,
@@ -17,19 +17,24 @@ senha varchar(15) not null
 -- adiciona um campo na tabela
 alter table tbusuarios add column perfil varchar(20) not null;
 
+-- adiciona dados
+update tbusuarios set perfil='admin' where iduser=1;
+update tbusuarios set perfil='admin' where iduser=2;
+update tbusuarios set perfil='user' where iduser=3;
+
 -- o comando abaixo descreve a tabela
 describe tbusuarios;
 
 -- as linhas baixo insete dados na tabela (CRUD) 
 -- CREAT
-insert into tbusuarios (usuario, fone, login, senha )
-values('Dinah Martins', "11-991745323", 'dinahdoria', '1234');
+insert into tbusuarios (iduser, usuario, fone, login, senha, perfil )
+values(1, 'Dinah Martins', "11-991745323", 'dinahdoria', '1234','admin' );
 
-insert into tbusuarios (usuario, fone, login, senha )
-values('Dinah Martins', "11-991745323", 'dinahmartins', '1234');
+insert into tbusuarios (iduser,usuario, fone, login, senha, perfil )
+values(2, 'Dinah Martins', "11-991745323", 'dinahmartins', '1234','admin');
 
-insert into tbusuarios (iduser, usuario, fone, login, senha )
-values(3,'Dinah Martins', "11-991745323", 'martinsdinah', '1234');
+insert into tbusuarios (iduser, usuario, fone, login, senha, perfil )
+values(3,'Dinah Martins', "11-991745323", 'martinsdinah', '1234','admin');
 
 -- a linha baixo exibe dados na tabela (CRUD) 
 -- read -> select
@@ -62,6 +67,8 @@ value('Linux Torvalds', 'Rua avenida', '11991745323','dinahdoria@gmail.com');
 
 select * from tbclientes;
 
+
+
 -- CRIAR TABELA OS
 
 create table tbos(
@@ -80,6 +87,11 @@ describe tbos;
 
 insert into tbos ( equipamento, defeito, servico, tecnico,valor, idcli)
 value ('Notebook', 'Não liga', 'Troca de fonte', 'Dinah Martins', '87.50',1);
+ 
+ -- adicionar colunas
+
+alter table tbos add tipo varchar(50) not null after data_os;
+alter table tbos add situacao varchar(20) not null after tipo;
  
 select * from tbos;
 
