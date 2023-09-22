@@ -182,7 +182,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menCadCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadCliActionPerformed
-        // TODO add your handling code here:
+                // abrir o form tela cliente dentro do desktop pane
+        TelaClientes cliente = new TelaClientes();
+        cliente.setVisible(true);
+        desktop.add(cliente, SOMEBITS);
     }//GEN-LAST:event_menCadCliActionPerformed
 
     private void MenAjuSobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenAjuSobActionPerformed
