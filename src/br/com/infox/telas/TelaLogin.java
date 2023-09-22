@@ -6,6 +6,7 @@ package br.com.infox.telas;
 
 import java.sql.*;
 import br.com.infox.dal.ModuloConexao;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 
@@ -45,8 +46,10 @@ ResultSet rs = null;
                 //System.out.println(perfil);
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
-                TelaPrincipal.MenRel.setEnabled(true);
-                TelaPrincipal.MenCadUsu.setEnabled(true);
+                TelaPrincipal.menRel.setEnabled(true);
+                TelaPrincipal.menCadUsu.setEnabled(true);
+                TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                TelaPrincipal.lblUsuario.setForeground(Color.red);
                 
                 // fechar 
                 this.dispose();
@@ -55,6 +58,7 @@ ResultSet rs = null;
                 }else {
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                TelaPrincipal.lblUsuario.setText(rs.getString(2));
                
                 // fechar 
                 this.dispose();
