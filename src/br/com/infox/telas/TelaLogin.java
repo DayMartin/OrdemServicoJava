@@ -35,10 +35,31 @@ ResultSet rs = null;
             
             // se existir senha e usuario correspondente
             if (rs.next()){
+                
+                // obtem o conteudo do campo PERFIL da tabela tbusuario
+                String perfil=rs.getString(6);
+                //estrutura para tratamento de perfil do usuario
+                
+                if(perfil.equals("admin")){
+                //console log perfil
+                //System.out.println(perfil);
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                TelaPrincipal.MenRel.setEnabled(true);
+                TelaPrincipal.MenCadUsu.setEnabled(true);
+                
+                // fechar 
                 this.dispose();
                 conexao.close();
+                
+                }else {
+                TelaPrincipal principal = new TelaPrincipal();
+                principal.setVisible(true);
+               
+                // fechar 
+                this.dispose();
+                conexao.close();
+                }
                 
             }else {
                 JOptionPane.showMessageDialog(null, "usuário e/ou senha inválido");
@@ -58,7 +79,7 @@ ResultSet rs = null;
         conexao = ModuloConexao.conector();
        
         // LInha de apoio para status da conexão
-        //System.out.println(conexao);
+        System.out.println(conexao);
         
         if (conexao != null){
             ldlStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/dbaccet.png")));
@@ -134,7 +155,7 @@ ResultSet rs = null;
                     .addComponent(jLabel2)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLogin)
                     .addComponent(ldlStatus))
                 .addContainerGap(18, Short.MAX_VALUE))
