@@ -1,4 +1,7 @@
--- comentarios
+-- TESTES PARA MYSQL 
+
+
+
 -- a linha abaixo cria um banco de dados
 create database dbinfox;
 
