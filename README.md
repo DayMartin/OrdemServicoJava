@@ -16,7 +16,16 @@ Usuário pode:
 * 
 Tela de Login sinalizando que está conectado ao banco de dados MySQL
 
-![Captura de tela de 2023-09-23 22-09-30](https://github.com/DayMartin/OrdemServicoJava/assets/69700069/e5bb8ce4-3f6b-477c-bfd4-edfaef9d22a6)
+![teladeLogin](https://github.com/DayMartin/OrdemServicoJava/assets/69700069/9fdd6f72-09c5-41f2-82b9-ec93997a3864)
 
+Tela para criação, edição, busca e delete de novos usuários
 
+![cadastroUsuarios](https://github.com/DayMartin/OrdemServicoJava/assets/69700069/d188da60-37e1-44f3-aeca-fbece52dc88e)
 
+Tela para criação, edição, busca e delete de novos clientes
+
+![clientes](https://github.com/DayMartin/OrdemServicoJava/assets/69700069/4ea7bb03-8bc6-492e-b55f-bbe183a2c76b)
+
+Tela para criação, edição, busca e delete de novas OS
+
+![novaOS](https://github.com/DayMartin/OrdemServicoJava/assets/69700069/aa8a8748-dd39-47f7-9dd2-df753304ff30)
